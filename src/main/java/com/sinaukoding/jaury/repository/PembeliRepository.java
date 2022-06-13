@@ -4,4 +4,5 @@ import com.sinaukoding.jaury.entitiy.Pembeli;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface PembeliRepository extends JpaRepository<Pembeli, Integer>{
+    Integer countByNamaPembeliContaining(String string);
 }

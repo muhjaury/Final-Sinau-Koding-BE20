@@ -4,6 +4,8 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "pembeli")
@@ -23,4 +25,7 @@ public class Pembeli {
 
     @Column(name = "alamat")
     private String alamat;
+
+    @OneToMany(mappedBy = "pembeli", fetch = FetchType.EAGER)
+    private List<Transaksi> transaksiPembeliList = new ArrayList<>();
 }

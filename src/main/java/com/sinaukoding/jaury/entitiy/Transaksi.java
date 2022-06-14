@@ -17,6 +17,12 @@ public class Transaksi {
     @Column(name = "id_transaksi")
     private Integer idTransaksi;
 
+    @JsonIgnoreProperties(value = {"transaksiPembayaranList","handler","hibernateLazyInitializer"}
+            ,allowSetters = true)
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "id_pembayaran")
+    private Pembayaran pembayaran;
+
     @JsonIgnoreProperties(value = {"transaksiBarangList","handler","hibernateLazyInitializer"}
             ,allowSetters = true)
     @ManyToOne(fetch = FetchType.EAGER)

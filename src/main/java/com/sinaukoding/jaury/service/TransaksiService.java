@@ -1,11 +1,9 @@
 package com.sinaukoding.jaury.service;
 
-import com.sinaukoding.jaury.entitiy.Barang;
 import com.sinaukoding.jaury.entitiy.Transaksi;
 import com.sinaukoding.jaury.entitiy.dto.TransaksiDTO;
 import com.sinaukoding.jaury.entitiy.dto.custom.Transaksi.TransaksiCustomDTO;
 import com.sinaukoding.jaury.entitiy.dto.custom.Transaksi.TransaksiWithIdCustomDTO;
-import com.sinaukoding.jaury.entitiy.mapping.BarangMapping;
 import com.sinaukoding.jaury.entitiy.mapping.TransaksiMapping;
 import com.sinaukoding.jaury.repository.TransaksiRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,6 +31,7 @@ public class TransaksiService {
     //Update
     public TransaksiWithIdCustomDTO updateTransaksiById(TransaksiDTO data, Integer id){
         Transaksi reference = transaksiRepository.findById(id).get();
+        reference.setPembayaran(data.getPembayaran()!=null?data.getPembayaran():reference.getPembayaran());
         reference.setBarang(data.getBarang()!=null?data.getBarang():reference.getBarang());
         reference.setPembeli(data.getPembeli()!=null?data.getPembeli():reference.getPembeli());
         reference.setTglTransaksi(data.getTglTransaksi()!=null?data.getTglTransaksi():reference.getTglTransaksi());

@@ -2,7 +2,7 @@ package com.sinaukoding.jaury.service;
 
 import com.sinaukoding.jaury.entitiy.Supplier;
 import com.sinaukoding.jaury.entitiy.dto.SupplierDTO;
-import com.sinaukoding.jaury.entitiy.dto.custom.SupplierWithIdCustomDTO;
+import com.sinaukoding.jaury.entitiy.dto.custom.Supplier.SupplierWithIdCustomDTO;
 import com.sinaukoding.jaury.entitiy.mapping.SupplierMapping;
 import com.sinaukoding.jaury.repository.SupplierRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +27,7 @@ public class SupplierService {
     }
 
     //Update
-    public SupplierWithIdCustomDTO updateSupplierById(SupplierDTO data, int id){
+    public SupplierWithIdCustomDTO updateSupplierById(SupplierDTO data, Integer id){
         Supplier reference = supplierRepository.findById(id).get();
         reference.setNamaSupplier(data.getNamaSupplier()!=null?data.getNamaSupplier():reference.getNamaSupplier());
         reference.setNoTelp(data.getNoTelp()!=null?data.getNoTelp():reference.getNoTelp());
@@ -36,7 +36,7 @@ public class SupplierService {
     }
 
     //Delete
-    public Boolean deleteSupplierById(int id){
+    public Boolean deleteSupplierById(Integer id){
         Supplier reference = supplierRepository.findById(id).orElse(null);
         if(reference != null){
             supplierRepository.delete(reference);

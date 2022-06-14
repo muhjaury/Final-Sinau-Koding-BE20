@@ -13,7 +13,7 @@ public class Pembeli {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_pembeli")
-    private int idPembeli;
+    private Integer idPembeli;
 
     @Column(name = "nama_pembeli")
     private String namaPembeli;

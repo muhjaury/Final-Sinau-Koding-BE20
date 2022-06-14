@@ -14,14 +14,14 @@ public class Pembayaran {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_pembayaran")
-    private int idPembayaran;
+    private Integer idPembayaran;
 
     @Temporal(TemporalType.DATE)
     @Column(name = "tgl_bayar")
     private Date tglBayar;
 
     @Column(name = "total")
-    private double total;
+    private Double total;
 
     @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "id_transaksi")

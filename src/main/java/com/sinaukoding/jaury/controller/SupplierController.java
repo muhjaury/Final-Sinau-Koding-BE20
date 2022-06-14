@@ -24,12 +24,12 @@ public class SupplierController {
     }
 
     @PutMapping("/{id}")
-    public Response updateSupplierById(@RequestBody SupplierDTO param, @PathVariable int id){
+    public Response updateSupplierById(@RequestBody SupplierDTO param, @PathVariable Integer id){
         return new Response(supplierService.updateSupplierById(param, id),"Data updated !", HttpStatus.OK);
     }
 
     @DeleteMapping("/{id}")
-    public Response deleteSupplierById(@PathVariable int id){
+    public Response deleteSupplierById(@PathVariable Integer id){
         if(supplierService.deleteSupplierById(id)) {
             return new Response(null,"Data deleted !", HttpStatus.OK);
         }else{

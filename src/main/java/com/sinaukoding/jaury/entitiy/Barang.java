@@ -16,20 +16,20 @@ public class Barang {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_barang")
-    private int idBarang;
+    private Integer idBarang;
 
     @Column(name = "nama_barang")
     private String namaBarang;
 
     @Column(name = "harga")
-    private double harga;
+    private Double harga;
 
     @Column(name = "stok")
-    private int stok;
+    private Integer stok;
 
     @JsonIgnoreProperties(value = {"barangSupplierList","handler","hibernateLazyInitializer"}
             ,allowSetters = true)
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_supplier")
     private Supplier supplier;
 

@@ -15,7 +15,7 @@ public class Transaksi {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_transaksi")
-    private int idTransaksi;
+    private Integer idTransaksi;
 
     @JsonIgnoreProperties(value = {"transaksiBarangList","handler","hibernateLazyInitializer"}
             ,allowSetters = true)

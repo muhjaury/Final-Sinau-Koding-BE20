@@ -2,7 +2,7 @@ package com.sinaukoding.jaury.entitiy.mapping;
 
 import com.sinaukoding.jaury.entitiy.Supplier;
 import com.sinaukoding.jaury.entitiy.dto.SupplierDTO;
-import com.sinaukoding.jaury.entitiy.dto.custom.SupplierWithIdCustomDTO;
+import com.sinaukoding.jaury.entitiy.dto.custom.Supplier.SupplierWithIdCustomDTO;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 

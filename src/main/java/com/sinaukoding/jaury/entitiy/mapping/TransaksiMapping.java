@@ -17,8 +17,5 @@ public interface TransaksiMapping {
     TransaksiDTO toDTO(Transaksi transaksi);
     TransaksiCustomDTO toCustomDTO(Transaksi transaksi);
     TransaksiWithIdCustomDTO toWithIdCustomDTO(Transaksi transaksi);
-    List<Transaksi> toTransaksiList(List<TransaksiDTO> dto);
-    List<TransaksiDTO> toTransaksiDTOList(List<Transaksi> list);
-    List<TransaksiCustomDTO> toTransaksiCustomDTOList(List<Transaksi> list);
     List<TransaksiWithIdCustomDTO> toTransaksiWithIdCustomDTOList(List<Transaksi> list);
 }

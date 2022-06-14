@@ -1,7 +1,7 @@
 package com.sinaukoding.jaury.controller;
 
 import com.sinaukoding.jaury.entitiy.dto.custom.Barang.BarangCustomDTO;
-import com.sinaukoding.jaury.entitiy.dto.custom.Barang.BarangSupplierCustomDTO;
+import com.sinaukoding.jaury.entitiy.dto.custom.Barang.BarangUpdateCustomDTO;
 import com.sinaukoding.jaury.response.Response;
 import com.sinaukoding.jaury.service.BarangService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,16 +25,16 @@ public class BarangController {
     }
 
     @PutMapping("/{id}")
-    public Response updateBarang(@RequestBody BarangSupplierCustomDTO data, @PathVariable Integer id){
+    public Response updateBarang(@RequestBody BarangUpdateCustomDTO data, @PathVariable Integer id){
         return new Response(barangService.updateBarangById(data, id),"Barang updated !", HttpStatus.OK);
     }
 
     @DeleteMapping("/{id}")
     public Response deleteBarangById(@PathVariable Integer id){
         if(barangService.deleteBarangById(id)) {
-            return new Response(null,"Data deleted !", HttpStatus.OK);
+            return new Response(null,"Barang deleted !", HttpStatus.OK);
         }else{
-            return new Response(null,"Data fail to delete !", HttpStatus.OK);
+            return new Response(null,"Barang fail to delete !", HttpStatus.OK);
         }
     }
 }

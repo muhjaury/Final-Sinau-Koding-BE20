@@ -15,7 +15,5 @@ public interface SupplierMapping {
     SupplierDTO toDTO(Supplier supplier);
 
     SupplierWithIdCustomDTO toWithIdCustomDTO(Supplier supplier);
-    List<Supplier> toSupplierList(List<SupplierDTO> dtoList);
-    List<SupplierDTO> toSupplierDTOList(List<Supplier> supplierList);
     List<SupplierWithIdCustomDTO> toSupplierCustomWithIdDTOList(List<Supplier> supplierList);
 }

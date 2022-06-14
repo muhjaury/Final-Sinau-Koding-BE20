@@ -1,8 +1,6 @@
 package com.sinaukoding.jaury.controller;
 
 import com.sinaukoding.jaury.entitiy.dto.TransaksiDTO;
-import com.sinaukoding.jaury.entitiy.dto.custom.Barang.BarangCustomDTO;
-import com.sinaukoding.jaury.entitiy.dto.custom.Barang.BarangSupplierCustomDTO;
 import com.sinaukoding.jaury.entitiy.dto.custom.Transaksi.TransaksiCustomDTO;
 import com.sinaukoding.jaury.response.Response;
 import com.sinaukoding.jaury.service.TransaksiService;
@@ -18,7 +16,7 @@ public class TransaksiController {
 
     @PostMapping
     public Response createTransaksi(@RequestBody TransaksiCustomDTO data){
-        return new Response(transaksiService.createTransaksi(data), "Barang created !", HttpStatus.OK);
+        return new Response(transaksiService.createTransaksi(data), "Transaksi created !", HttpStatus.OK);
     }
 
     @GetMapping
@@ -34,9 +32,9 @@ public class TransaksiController {
     @DeleteMapping("/{id}")
     public Response deleteTransaksiById(@PathVariable Integer id){
         if(transaksiService.deleteTransaksiById(id)) {
-            return new Response(null,"Data deleted !", HttpStatus.OK);
+            return new Response(null,"Transaksi deleted !", HttpStatus.OK);
         }else{
-            return new Response(null,"Data fail to delete !", HttpStatus.OK);
+            return new Response(null,"Transaksi fail to delete !", HttpStatus.OK);
         }
     }
 }

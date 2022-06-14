@@ -6,7 +6,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class BarangCustomWithIdDTO {
+public class BarangWithIdCustomDTO {
     private Integer idBarang;
     private String namaBarang;
     private Double harga;

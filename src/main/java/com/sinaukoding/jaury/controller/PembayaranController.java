@@ -20,7 +20,7 @@ public class PembayaranController {
 
     @GetMapping
     public Response selectBarang(){
-        return new Response(pembayaranService.selectPembayaran(),"Show all barang !", pembayaranService.countPembayaran(null),HttpStatus.OK);
+        return new Response(pembayaranService.selectPembayaran(),"Show all pembayaran !", pembayaranService.countPembayaran(null),HttpStatus.OK);
     }
 
     @PutMapping("/{id}")
@@ -31,9 +31,9 @@ public class PembayaranController {
     @DeleteMapping("/{id}")
     public Response deletePembayaranById(@PathVariable Integer id){
         if(pembayaranService.deletePembayaranById(id)) {
-            return new Response(null,"Data deleted !", HttpStatus.OK);
+            return new Response(null,"Pembayaran deleted !", HttpStatus.OK);
         }else{
-            return new Response(null,"Data fail to delete !", HttpStatus.OK);
+            return new Response(null,"Pembayaran fail to delete !", HttpStatus.OK);
         }
     }
 

@@ -1,6 +1,5 @@
 package com.sinaukoding.jaury.controller;
 
-import com.sinaukoding.jaury.entitiy.dto.custom.Barang.BarangSupplierCustomDTO;
 import com.sinaukoding.jaury.entitiy.dto.custom.Pembeli.PembeliCustomDTO;
 import com.sinaukoding.jaury.response.Response;
 import com.sinaukoding.jaury.service.PembeliService;
@@ -26,15 +25,15 @@ public class PembeliController {
 
     @PutMapping("/{id}")
     public Response updatePembeli(@RequestBody PembeliCustomDTO data, @PathVariable Integer id){
-        return new Response(pembeliService.updatePembeli(data, id),"Barang updated !", HttpStatus.OK);
+        return new Response(pembeliService.updatePembeli(data, id),"Pembeli updated !", HttpStatus.OK);
     }
 
     @DeleteMapping("/{id}")
     public Response deletePembeliById(@PathVariable Integer id){
         if(pembeliService.deletePembeliById(id)) {
-            return new Response(null,"Data deleted !", HttpStatus.OK);
+            return new Response(null,"Pembeli deleted !", HttpStatus.OK);
         }else{
-            return new Response(null,"Data fail to delete !", HttpStatus.OK);
+            return new Response(null,"Pembeli fail to delete !", HttpStatus.OK);
         }
     }
 }

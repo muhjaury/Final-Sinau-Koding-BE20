@@ -17,6 +17,5 @@ public interface PembeliMapping {
     PembeliDTO toDTO(Pembeli pembeli);
     PembeliCustomDTO toCustomDTO(Pembeli pembeli);
     List<PembeliDTO> toDTOList(List<Pembeli> data);
-    List<PembeliCustomDTO> toCustomDTOList(List<Pembeli> data);
 
 }

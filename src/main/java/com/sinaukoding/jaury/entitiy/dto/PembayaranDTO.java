@@ -1,6 +1,5 @@
 package com.sinaukoding.jaury.entitiy.dto;
 
-import com.sinaukoding.jaury.entitiy.Transaksi;
 import lombok.Getter;
 import lombok.Setter;
 

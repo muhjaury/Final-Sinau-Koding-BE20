@@ -25,15 +25,15 @@ public class SupplierController {
 
     @PutMapping("/{id}")
     public Response updateSupplierById(@RequestBody SupplierDTO param, @PathVariable Integer id){
-        return new Response(supplierService.updateSupplierById(param, id),"Data updated !", HttpStatus.OK);
+        return new Response(supplierService.updateSupplierById(param, id),"Supplier updated !", HttpStatus.OK);
     }
 
     @DeleteMapping("/{id}")
     public Response deleteSupplierById(@PathVariable Integer id){
         if(supplierService.deleteSupplierById(id)) {
-            return new Response(null,"Data deleted !", HttpStatus.OK);
+            return new Response(null,"Supplier deleted !", HttpStatus.OK);
         }else{
-            return new Response(null,"Data fail to delete !", HttpStatus.OK);
+            return new Response(null,"Supplier fail to delete !", HttpStatus.OK);
         }
     }
 

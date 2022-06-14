@@ -6,7 +6,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
-public class BarangSupplierCustomDTO {
+public class BarangUpdateCustomDTO {
     private String namaBarang;
     private Double harga;
     private Integer stok;

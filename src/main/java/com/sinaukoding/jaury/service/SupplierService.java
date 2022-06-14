@@ -16,9 +16,9 @@ public class SupplierService {
     SupplierRepository supplierRepository;
 
     //Create
-    public SupplierDTO createSupplier(SupplierDTO data){
+    public SupplierWithIdCustomDTO createSupplier(SupplierDTO data){
         Supplier supplier = SupplierMapping.INSTANCE.toEntity(data);
-        return SupplierMapping.INSTANCE.toDTO(supplierRepository.save(supplier));
+        return SupplierMapping.INSTANCE.toWithIdCustomDTO(supplierRepository.save(supplier));
     }
 
     //Read

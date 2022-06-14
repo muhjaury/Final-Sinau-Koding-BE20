@@ -4,7 +4,9 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "pembayaran")
@@ -23,7 +25,10 @@ public class Pembayaran {
     @Column(name = "total")
     private Double total;
 
-    @OneToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "id_transaksi")
-    private Transaksi transaksiPembayaran;
+//    @OneToOne(fetch = FetchType.EAGER)
+//    @JoinColumn(name = "id_transaksi")
+//    private Transaksi transaksiPembayaran;
+
+    @OneToMany(mappedBy = "pembayaran", fetch = FetchType.EAGER)
+    private List<Transaksi> transaksiPembayaranList = new ArrayList<>();
 }

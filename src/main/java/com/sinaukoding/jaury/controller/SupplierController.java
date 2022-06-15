@@ -23,6 +23,11 @@ public class SupplierController {
         return new Response(supplierService.selectSupplier(), "Show all supplier !", supplierService.countSupplier(null), HttpStatus.OK);
     }
 
+    @GetMapping("/detail")
+    public Response selectSupplierByName(@RequestParam(value = "n") String string){
+        return new Response(supplierService.selectSupplierByName(string), "Show all supplier !", supplierService.countSupplier(null), HttpStatus.OK);
+    }
+
     @PutMapping("/{id}")
     public Response updateSupplierById(@RequestBody SupplierDTO param, @PathVariable Integer id){
         return new Response(supplierService.updateSupplierById(param, id),"Supplier updated !", HttpStatus.OK);

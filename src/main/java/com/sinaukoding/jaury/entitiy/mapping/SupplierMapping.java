@@ -12,7 +12,6 @@ import java.util.List;
 public interface SupplierMapping {
     SupplierMapping INSTANCE = Mappers.getMapper(SupplierMapping.class);
     Supplier toEntity(SupplierDTO supplierDTO);
-    SupplierDTO toDTO(Supplier supplier);
 
     SupplierWithIdCustomDTO toWithIdCustomDTO(Supplier supplier);
     List<SupplierWithIdCustomDTO> toSupplierCustomWithIdDTOList(List<Supplier> supplierList);

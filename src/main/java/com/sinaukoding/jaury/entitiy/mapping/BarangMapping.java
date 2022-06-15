@@ -15,7 +15,6 @@ public interface BarangMapping {
     Barang toEntity(BarangDTO barangDTO);
     Barang toEntity(BarangCustomDTO data);
 
-    BarangCustomDTO toCustomDTO(Barang barang);
 
     BarangWithIdCustomDTO toCutomWithIdDTO(Barang barang);
     List<BarangWithIdCustomDTO> toCustomWithIdDTOList(List<Barang> barang);

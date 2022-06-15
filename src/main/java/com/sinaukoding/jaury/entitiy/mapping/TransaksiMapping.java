@@ -14,8 +14,6 @@ public interface TransaksiMapping {
     TransaksiMapping INSTANCE = Mappers.getMapper(TransaksiMapping.class);
     Transaksi toEntity(TransaksiDTO dto);
     Transaksi toEntityCustom(TransaksiCustomDTO dto);
-    TransaksiDTO toDTO(Transaksi transaksi);
-    TransaksiCustomDTO toCustomDTO(Transaksi transaksi);
     TransaksiWithIdCustomDTO toWithIdCustomDTO(Transaksi transaksi);
     List<TransaksiWithIdCustomDTO> toTransaksiWithIdCustomDTOList(List<Transaksi> list);
 }

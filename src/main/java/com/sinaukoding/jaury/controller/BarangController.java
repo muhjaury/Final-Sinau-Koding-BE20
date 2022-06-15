@@ -24,6 +24,11 @@ public class BarangController {
         return new Response(barangService.selectBarang(),"Show all barang !", barangService.countBarang(null),HttpStatus.OK);
     }
 
+    @GetMapping("/detail")
+    public Response selectBarangByNamaBarangAndSupplier(@RequestParam(value = "namaBarang") String string,@RequestParam(value = "idSupplier") Integer integer){
+        return new Response(barangService.selectBarangByNamaBarangAndSupplier(string, integer),"Show all barang !", barangService.countBarang(null),HttpStatus.OK);
+    }
+
     @PutMapping("/{id}")
     public Response updateBarang(@RequestBody BarangUpdateCustomDTO data, @PathVariable Integer id){
         return new Response(barangService.updateBarangById(data, id),"Barang updated !", HttpStatus.OK);

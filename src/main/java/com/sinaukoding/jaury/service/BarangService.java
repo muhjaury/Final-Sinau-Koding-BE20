@@ -27,6 +27,10 @@ public class BarangService {
         return BarangMapping.INSTANCE.toCustomWithIdDTOList(barangRepository.findAll());
     }
 
+    public List<BarangWithIdCustomDTO> selectBarangByNamaBarangAndSupplier(String string, Integer integer){
+        return BarangMapping.INSTANCE.toCustomWithIdDTOList(barangRepository.findByNamaBarangContainingAndSupplier(string, integer));
+    }
+
     //Update
     public BarangWithIdCustomDTO updateBarangById(BarangUpdateCustomDTO data, Integer id){
         Barang reference = barangRepository.findById(id).get();

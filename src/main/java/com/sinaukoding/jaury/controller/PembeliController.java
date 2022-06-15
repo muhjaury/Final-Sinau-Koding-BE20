@@ -23,6 +23,11 @@ public class PembeliController {
         return new Response(pembeliService.selectPembeli(),"Show all pembeli !", pembeliService.countPembeli(null),HttpStatus.OK);
     }
 
+    @GetMapping("/detail")
+    public Response selectPembeliByNamaPembeli(@RequestParam(value = "n") String string){
+        return new Response(pembeliService.selectPembeliByNamaPembeli(string),"Show all pembeli !", pembeliService.countPembeli(null),HttpStatus.OK);
+    }
+
     @PutMapping("/{id}")
     public Response updatePembeli(@RequestBody PembeliCustomDTO data, @PathVariable Integer id){
         return new Response(pembeliService.updatePembeli(data, id),"Pembeli updated !", HttpStatus.OK);

@@ -25,6 +25,9 @@ public class PembeliService {
     public List<PembeliDTO> selectPembeli(){
         return PembeliMapping.INSTANCE.toDTOList(pembeliRepository.findAll());
     }
+    public List<PembeliDTO> selectPembeliByNamaPembeli(String string){
+        return PembeliMapping.INSTANCE.toDTOList(pembeliRepository.findByNamaPembeliContaining(string));
+    }
 
     //Update
     public PembeliDTO updatePembeli(PembeliCustomDTO data, Integer id){

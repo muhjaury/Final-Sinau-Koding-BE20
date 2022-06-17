@@ -29,13 +29,14 @@ public class TransaksiService {
     }
 
     //Update
-    public TransaksiWithIdCustomDTO updateTransaksiById(TransaksiDTO data, Integer id){
+    public TransaksiWithIdCustomDTO updateTransaksiById(TransaksiCustomDTO data, Integer id){
+        Transaksi entity = TransaksiMapping.INSTANCE.toEntityCustom(data);
         Transaksi reference = transaksiRepository.findById(id).get();
-        reference.setPembayaran(data.getPembayaran()!=null?data.getPembayaran():reference.getPembayaran());
-        reference.setBarang(data.getBarang()!=null?data.getBarang():reference.getBarang());
-        reference.setPembeli(data.getPembeli()!=null?data.getPembeli():reference.getPembeli());
-        reference.setTglTransaksi(data.getTglTransaksi()!=null?data.getTglTransaksi():reference.getTglTransaksi());
-        reference.setKeterangan(data.getKeterangan()!=null?data.getKeterangan():reference.getKeterangan());
+        reference.setPembayaran(data.getPembayaran()!=null?entity.getPembayaran():reference.getPembayaran());
+        reference.setBarang(data.getBarang()!=null?entity.getBarang():reference.getBarang());
+        reference.setPembeli(data.getPembeli()!=null?entity.getPembeli():reference.getPembeli());
+        reference.setTglTransaksi(data.getTglTransaksi()!=null?entity.getTglTransaksi():reference.getTglTransaksi());
+        reference.setKeterangan(data.getKeterangan()!=null?entity.getKeterangan():reference.getKeterangan());
         return TransaksiMapping.INSTANCE.toWithIdCustomDTO(transaksiRepository.save(reference));
     }
 

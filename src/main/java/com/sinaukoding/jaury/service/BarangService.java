@@ -33,11 +33,12 @@ public class BarangService {
 
     //Update
     public BarangWithIdCustomDTO updateBarangById(BarangUpdateCustomDTO data, Integer id){
+        Barang entity = BarangMapping.INSTANCE.toUpdateCustomEntity(data);
         Barang reference = barangRepository.findById(id).get();
         reference.setNamaBarang(data.getNamaBarang()!=null?data.getNamaBarang():reference.getNamaBarang());
         reference.setHarga(data.getHarga()!=null?data.getHarga():reference.getHarga());
         reference.setStok(data.getStok()!=null?data.getStok():reference.getStok());
-        reference.setSupplier(data.getSupplier()!=null?data.getSupplier():reference.getSupplier());
+        reference.setSupplier(data.getSupplier()!=null?entity.getSupplier():reference.getSupplier());
         return BarangMapping.INSTANCE.toCutomWithIdDTO(barangRepository.save(reference));
     }
 

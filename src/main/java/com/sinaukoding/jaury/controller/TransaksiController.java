@@ -25,7 +25,7 @@ public class TransaksiController {
     }
 
     @PutMapping("/{id}")
-    public Response updateTransaksi(@RequestBody TransaksiDTO data, @PathVariable Integer id){
+    public Response updateTransaksi(@RequestBody TransaksiCustomDTO data, @PathVariable Integer id){
         return new Response(transaksiService.updateTransaksiById(data, id),"Transaksi updated !", HttpStatus.OK);
     }
 

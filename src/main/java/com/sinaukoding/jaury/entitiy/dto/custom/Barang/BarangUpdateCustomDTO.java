@@ -1,6 +1,6 @@
 package com.sinaukoding.jaury.entitiy.dto.custom.Barang;
 
-import com.sinaukoding.jaury.entitiy.Supplier;
+import com.sinaukoding.jaury.entitiy.dto.custom.Supplier.SupplierOnlyIdCustomDTO;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -10,5 +10,5 @@ public class BarangUpdateCustomDTO {
     private String namaBarang;
     private Double harga;
     private Integer stok;
-    private Supplier supplier;
+    private SupplierOnlyIdCustomDTO supplier;
 }
